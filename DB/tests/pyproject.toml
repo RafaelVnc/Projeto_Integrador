@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "teste-bd1"
+version = "0.1.0"
+description = ""
+authors = ["Rafael Venancio <rafael.venancio08.06@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mysql-connector-python = "^8.4.0"
+faker = "^25.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
