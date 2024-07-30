@@ -1,0 +1,8 @@
+A questão tbm de observar a LGPD para colocar mascara na senha do usuário e uma criptografia para guardar os dados sensíveis.
+Possível solução: Uso de hash para as senhas - implementado no backend do processo de cadastro, a senha inserida pelo usuário é traduzida em um hash, este que é armazenado no banco de dados em vez da própria senha - alterar atributo na tabela login. 
+
+Outra questão é de quando o estabelecimento estiver off-line o cliente não conseguir prosseguir com um pedido. Uma condição de confirmação do estabelecimento.
+Possível solução: Adicionar atributo "Disponível" na tabela estabelecimento - Tipo Bool - Modificável por uma funcionalidade no menu superior direito de um tipo switch.
+
+Não frustrar o cliente com um pedido que não pode ser atendido mesmo depois do cliente ter montado o pedido.
+Possível solução: Verificar protótipo UX do cardápio com as funcionalidades disponivel. 
