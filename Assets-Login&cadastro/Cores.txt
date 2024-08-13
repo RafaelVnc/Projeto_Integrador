@@ -1,0 +1,6 @@
+Assets Página registro e login:
+Cores RGB:
+- Azul Principal: 3, 36, 74
+- Azul mais escuro: 0, 24, 53, 68%
+- Azul botão: 0, 68, 153
+- Azul letras e input: 179, 189, 200
