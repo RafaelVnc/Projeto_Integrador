@@ -4,3 +4,6 @@
 <a href=https://www.figma.com/design/dNOEUGGdTWjcNF1aYDXEbG/Prototipo-PI---site?node-id=0-1&t=fTFieJN6rOKHwzEO-0>
   <img alt="Layout Página inicial Figma" src="https://img.shields.io/badge/Acessar%20Prototipos%20Landing%20Page%20-Figma-%2304D361">
 </a>
+<a href=https://trello.com/b/8EgfAWCg/backlog-pi3>
+  <img alt="Link Quadro Trello" src="https://img.shields.io/badge/Acessar%20Backlog%20-Trello-%3204">
+</a>
