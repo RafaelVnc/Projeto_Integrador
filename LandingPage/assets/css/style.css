@@ -112,7 +112,7 @@ p{
 
 .menu ul li a:hover{
     text-decoration: overline;
-    color: #004499;
+    color: var(--AzulBotões);
 }
 
 .menu-content{

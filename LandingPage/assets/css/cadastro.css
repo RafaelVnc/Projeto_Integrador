@@ -1,0 +1,98 @@
+h2{
+    font-weight: 500;    
+}
+
+.cadastro{
+    display: flex;
+    align-items: center;
+    height: 85vh;
+}
+
+.cadastro-content{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: var(--gap);
+    height: 60vh;
+}
+
+.cadastro-text-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cadastro-text-content h2{
+    margin-top: -5rem;
+}
+
+.cadastro-form-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    color: var(--CinzaInputs);
+}
+.cadastro-form-content p{
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.form-cadastro label{
+    justify-content: left;
+    color: var(--CinzaInputs);
+}
+
+.form-cadastro input{
+    width: 100%;
+    height: 2.7rem;
+    border: 0.3rem solid var(--CinzaInputs);
+    color: var(--AzulPrincipal);
+    font-size: 2rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+.form-cadastro input:focus {
+    border: 0.3rem solid var(--AzulMaisEscuro);
+}
+
+.form-cadastro button{
+    background-color: var(--AzulBotões);
+    color: var(--Branco);
+    font-family: 'Kanit', sans-serif;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+}
+
+.form-cadastro button:hover{
+    color: var(--AzulBotões);
+    background-color: var(--AzulMaisEscuro);
+}
+
+.opcoes-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.opcoes-content a{
+    color: var(--Branco);
+}
+
+
+.opcoes-content a:hover{
+    text-decoration: underline;
+}
+
+.opcoes-content p{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
