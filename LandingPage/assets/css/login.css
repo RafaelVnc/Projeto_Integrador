@@ -1,0 +1,180 @@
+h2{
+    font-weight: 500;    
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    height: 85vh;
+}
+
+.login-form-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    color: var(--CinzaInputs);
+}
+
+.login-options{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+}
+
+.remember{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.remember input{
+    margin-left: -29rem;
+    margin-top: 2rem;
+}
+
+#remember{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 25px;  /* Largura do checkbox */
+    height: 25px; /* Altura do checkbox */
+    border: 4px solid var(--CinzaInputs); /* Cor da borda */
+    background-color: transparent; /* Transparente para esconder o fundo */
+    cursor: pointer;
+}
+
+.remember label{
+    margin-top: -2.9rem;
+    margin-left: -5rem;
+}
+
+.forgot-password{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: right;
+    align-items: right;
+    text-align: right;
+}
+
+.forgot-password a{
+
+    color: var(--CinzaInputs);
+}
+
+.forgot-password a:hover{
+    color: var(--AzulBotões);
+}
+
+.form-login label{
+    justify-content: left;
+    color: var(--CinzaInputs);
+}
+
+.form-login input{
+    width: 100%;
+    height: 2.7rem;
+    border: 0.3rem solid var(--CinzaInputs);
+    color: var(--AzulPrincipal);
+    font-size: 2rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+.form-login input:focus {
+    border: 0.3rem solid var(--AzulMaisEscuro);
+}
+
+.form-login button{
+    background-color: var(--AzulBotões);
+    color: var(--Branco);
+    font-family: 'Kanit', sans-serif;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+}
+
+.form-login button:hover{
+    color: var(--AzulBotões);
+    background-color: var(--AzulMaisEscuro);
+}
+
+.opcoes-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: -3rem;
+}
+
+.opcoes-content a{
+    color: var(--Branco);
+}
+
+
+.opcoes-content a:hover{
+    text-decoration: underline;
+}
+
+.opcoes-content p{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-wrapper-27 .checkbox {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.checkbox-wrapper-27 .checkbox > input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.checkbox-wrapper-27 .checkbox__icon {
+    display: inline-block;
+    color: var(--CinzaInputs);
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.checkbox-wrapper-27 input[type="checkbox"]:checked ~ .checkbox__icon {
+    color: var(--CinzaInputs);
+}
+
+.checkbox-wrapper-27 .checkbox__icon:before {
+    font-family: "icons-27";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.checkbox-wrapper-27 .icon--check:before,
+.checkbox-wrapper-27 input[type="checkbox"]:checked ~ .checkbox__icon:before {
+    content: "\e601";
+}
+
+  .checkbox-wrapper-27 .icon--check-empty:before,
+  .checkbox-wrapper-27 .checkbox__icon:before {
+    content: "\e600";
+  }
+
+  @font-face {
+    font-family: "icons-27";
+    font-weight: normal;
+    font-style: normal;
+    src: url("data:application/x-font-woff;charset=utf-8;base64,d09GRk9UVE8AAAR4AAoAAAAABDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAA9AAAAPgAAAD4fZUAVE9TLzIAAAHsAAAAYAAAAGAIIvy3Y21hcAAAAkwAAABMAAAATBpVzFhnYXNwAAACmAAAAAgAAAAIAAAAEGhlYWQAAAKgAAAANgAAADYAeswzaGhlYQAAAtgAAAAkAAAAJAPiAedobXR4AAAC/AAAABgAAAAYBQAAAG1heHAAAAMUAAAABgAAAAYABlAAbmFtZQAAAxwAAAE5AAABOUQYtNZwb3N0AAAEWAAAACAAAAAgAAMAAAEABAQAAQEBCGljb21vb24AAQIAAQA6+BwC+BsD+BgEHgoAGVP/i4seCgAZU/+LiwwHi2v4lPh0BR0AAAB8Dx0AAACBER0AAAAJHQAAAO8SAAcBAQgPERMWGyBpY29tb29uaWNvbW9vbnUwdTF1MjB1RTYwMHVFNjAxAAACAYkABAAGAQEEBwoNL2X8lA78lA78lA77lA6L+HQVi/yU+JSLi/iU/JSLBd83Fffsi4v77Pvsi4v37AUOi/h0FYv8lPiUi4v33zc3i/s3++yLi/fs9zeL398F9wCFFftN+05JzUdI9xr7GveR95FHzwUO+JQU+JQViwwKAAMCAAGQAAUAAAFMAWYAAABHAUwBZgAAAPUAGQCEAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA5gEB4P/g/+AB4AAgAAAAAQAAAAAAAAAAAAAAIAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABAA4AAAACgAIAAIAAgABACDmAf/9//8AAAAAACDmAP/9//8AAf/jGgQAAwABAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAACkYCfgXw889QALAgAAAAAAz65FuwAAAADPrkW7AAD/4AIAAeAAAAAIAAIAAAAAAAAAAQAAAeD/4AAAAgAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAABAAAAAgAAAAIAAAAAAFAAAAYAAAAAAA4ArgABAAAAAAABAA4AAAABAAAAAAACAA4ARwABAAAAAAADAA4AJAABAAAAAAAEAA4AVQABAAAAAAAFABYADgABAAAAAAAGAAcAMgABAAAAAAAKACgAYwADAAEECQABAA4AAAADAAEECQACAA4ARwADAAEECQADAA4AJAADAAEECQAEAA4AVQADAAEECQAFABYADgADAAEECQAGAA4AOQADAAEECQAKACgAYwBpAGMAbwBtAG8AbwBuAFYAZQByAHMAaQBvAG4AIAAxAC4AMABpAGMAbwBtAG8AbwBuaWNvbW9vbgBpAGMAbwBtAG8AbwBuAFIAZQBnAHUAbABhAHIAaQBjAG8AbQBvAG8AbgBHAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==") format("woff");
+  }
