@@ -54,3 +54,32 @@ function showTooltip() {
 tooltip_elements.forEach((elem) => {
   elem.addEventListener("mouseover", showTooltip);
 });
+
+const mainContent = document.getElementById('main-content');
+const buttons = document.querySelectorAll('.sidebar-links a');
+
+const loadContent = (page) => {
+  fetch(`./pages/${page}.html`)
+    .then(response => response.text())
+    .then(data => {
+      mainContent.innerHTML = data;
+      loadPageScript(page); 
+    })
+    .catch(error => console.error('Erro ao carregar a página:', error));
+};
+
+const loadPageScript = (page) => {
+  const script = document.createElement('script');
+  script.src = `./assets/js/${page}.js`; // Essa linha me fez perder 1 hora.
+  document.body.appendChild(script);
+};
+
+buttons.forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    const page = this.getAttribute('data-page'); 
+    loadContent(page);
+  });
+});
+
+loadContent('inicio'); 
