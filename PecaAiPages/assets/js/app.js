@@ -69,15 +69,25 @@ const loadContent = (page) => {
 };
 
 const loadPageScript = (page) => {
-  const script = document.createElement('script');
-  script.src = `./assets/js/${page}.js`; // Essa linha me fez perder 1 hora.
-  document.body.appendChild(script);
+
+  const existingScript = document.querySelector(`script[src="./assets/js/${page}.js"]`);
+  if (!existingScript) {
+    removeOldScripts();
+    const script = document.createElement('script');
+    script.src = `./assets/js/${page}.js`;
+    document.body.appendChild(script);
+  }
+};
+
+const removeOldScripts = () => {
+  const oldScripts = document.querySelectorAll('script[src*="./assets/js/"]');
+  oldScripts.forEach(script => script.remove());
 };
 
 buttons.forEach(button => {
   button.addEventListener('click', function(e) {
     e.preventDefault();
-    const page = this.getAttribute('data-page'); 
+    const page = this.getAttribute('data-page');
     loadContent(page);
   });
 });
