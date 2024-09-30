@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Cardápio</title>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/meu_cardapio.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/meu_cardapio.css">
 </head>
 <body>
     <h1>Meu Cardápio</h1>
@@ -71,6 +71,9 @@
                     <label for="edit-produto-preco">Preço:</label>
                     <input type="number" step="0.01" id="edit-produto-preco" name="preco">
                 
+                    <label for="edit-produto-foto" id="btn-file">Foto do Prato:</label>
+                    <input type="file" id="edit-produto-foto" accept="image/*" required name="foto">
+
                     <div class="btn-salvar-edit">                            
                         <button type="submit" id="btn-salvar-edit">Salvar</button>
                     </div>
