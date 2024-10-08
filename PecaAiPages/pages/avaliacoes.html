@@ -4,15 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliações</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/avaliacoes.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/avaliacoes.css">
 </head>
 <body>
-    <h1>Avaliações</h1>
+    <div class="container">
+        <h1>Avaliações</h1>
 
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis alias magnam animi harum iste exercitationem consequuntur unde. Enim sint maiores, doloremque laborum non atque itaque iste magni nam facilis debitis.</p>
-    <p class="copyright">
-        &copy; 2024 - <span>Peça Aí!</span> Todos os direitos reservados. 
-    </p>
+        <table class="avaliacoes-tabela">
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Avaliação</th>
+                    <th>Comentários</th>
+                    <th>Tópicos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João Márcio</td>
+                    <td>
+                        <span class="stars">★★★★★</span>
+                    </td>
+                    <td>Muito saboroso, gostei!</td>
+                    <td>
+                        <ul>
+                            <li>Entrega rápida</li>
+                            <li>Temperatura ideal</li>
+                            <li>Comida saborosa</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Maria Silva</td>
+                    <td>
+                        <span class="stars">★★★★☆</span>
+                    </td>
+                    <td>Muito bom!</td>
+                    <td>
+                        <ul>
+                            <li>Entrega rápida</li>
+                            <li>Boa embalagem</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="copyright">
+            &copy; 2024 - <span>Peça Aí!</span> Todos os direitos reservados. 
+        </p>
+    </div>
 </body>
 </html>

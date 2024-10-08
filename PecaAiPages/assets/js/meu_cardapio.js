@@ -62,9 +62,49 @@ function modalAddInteractions() {
     };
 }
 
+function modalConfirmDelete() {
+    const btn_open_excluir = document.getElementById("btn-open-excluir");
+    const modal_excluir = document.getElementById("modal-confirm-excluir");
+    const btn_close_excluir = document.getElementById("btn-close-excluir");
+    const btn_cancelar = document.getElementById("btn-cancelar");
+
+    btn_open_excluir.onclick = function () {
+        modal_excluir.style.display = "block";
+    };
+
+    btn_close_excluir.onclick = function () {
+        modal_excluir.style.display = "none";
+    };
+
+    btn_cancelar.onclick = function () {
+        modal_excluir.style.display = "none";
+    };
+}
+
 function inicializarPaginaMeuCardapio() {
     carregarProdutos();
     modalAddInteractions();
+    modalConfirmDelete();
 }
 
 inicializarPaginaMeuCardapio();
+
+/*
+const btn_excluir = document.getElementById("btn-excluir");
+
+btn_excluir.addEventListener('click', () =>{
+    fetch(`/cardapio/${id_item}`, {
+        
+        method: 'DELETE'
+    
+    }).then(response => {
+        if (response.ok){
+            console.log("Item deletado com sucesso!");
+        } else {
+            console.log("Erro ao deletar!");
+        }
+    }).catch(error => {
+        console.log('Erro:', error);
+    });
+});
+*/

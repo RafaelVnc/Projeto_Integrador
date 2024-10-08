@@ -24,7 +24,7 @@
             <div class="forms-add">
                 <h1>Adicionar produtos</h1>
                     
-                    <form action="/cadastrarProduto" " id="form-add" >
+                    <form action="/cadastrarProduto" method="post" id="form-add" >
                         <label for="produtoNome">Nome do Produto*</label>
                         <input type="text" id="produtoNome" required placeholder="Nome do produto" name="nome">
                                 
@@ -78,6 +78,24 @@
                         <button type="submit" id="btn-salvar-edit">Salvar</button>
                     </div>
                 </form>
+
+                <div class="btn-excluir">                       
+                    <button class="btn-open-excluir" id="btn-open-excluir">Excluir produto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-confirm-excluir" class="modal-confirm-excluir">
+        <div class="modal-content">
+            <span class="close" id="btn-close-excluir">&times;</span>
+            
+            <h1>Quer mesmo excluír este produto?</h1>
+            <div class="btn-escolha">
+                <button class="btn-cancelar" id="btn-cancelar">Cancelar</button>
+            </div>
+            <div class="btn-escolha">                       
+                <button class="btn-excluir" id="btn-excluir">Excluir produto</button>
             </div>
         </div>
     </div>

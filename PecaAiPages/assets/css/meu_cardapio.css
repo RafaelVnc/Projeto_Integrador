@@ -210,6 +210,18 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   
+  .modal-confirm-excluir {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 16rem;
+    top: 10rem;
+    width: 90%; /* Full width */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
   /* Modal Content/Box */
   .modal-content {
     background-color: var(--main-color);
@@ -261,7 +273,7 @@
     margin-bottom: 5px;
   }
  
-  .btn-salvar-add, .btn-salvar-edit{
+  .btn-salvar-add, .btn-salvar-edit, .btn-excluir, .btn-escolha{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -272,6 +284,10 @@
     color: white;
   }
 
+  .modal-confirm-excluir h1 {
+    color: white;
+    margin-left: 24rem;
+  }
 
   form textarea{
     width: 100%;
@@ -289,7 +305,6 @@
 
   #produtoFoto{
     width: 20%;
-    
   }
 
   #btn-salvar-add, #btn-salvar-edit{
@@ -301,9 +316,34 @@
     background-color: var(--main-color-dark);
     border-radius: 1rem;
     cursor: pointer;
-   
   }
   
-  #btn-salvar-add:hover, #btn-salvar-edit:hover{
+  #btn-salvar-add:hover, #btn-salvar-edit:hover, #btn-cancelar:hover{
     background-color: #08143a;
+  }
+
+  #btn-excluir, #btn-open-excluir{
+    width: 50%;
+    height: 2rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    background-color: rgb(204, 0, 0);
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  #btn-excluir:hover, #btn-open-excluir:hover{
+    background-color: #a80000;
+  }
+
+  #btn-cancelar{
+    width: 50%;
+    height: 2rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    background-color: var(--main-color-dark);
+    border-radius: 1rem;
+    cursor: pointer;
   }

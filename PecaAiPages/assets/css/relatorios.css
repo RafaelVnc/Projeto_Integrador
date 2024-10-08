@@ -1,0 +1,105 @@
+
+main {
+    padding: 2rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  header h1 {
+    color: color(srgb rgb(0, 0, 0));
+    font-size: 2rem;
+  }
+  
+  .periodo-vendas {
+    font-size: 1.2rem;
+    color: var(--cinza-escuro);
+  }
+  
+  .periodo-vendas .data-selecionada {
+    color: var(--main-color);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+ 
+  .resumo-vendas {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .vendas-totais {
+    background-color: var(--cinza-light);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    margin-right: 1rem;
+  }
+  
+  .vendas-totais h2 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+  }
+  
+
+  .tabela-pagamentos {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+  }
+  
+  .tabela-pagamentos th, .tabela-pagamentos td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--cinza-light);
+  }
+  
+  .tabela-pagamentos thead {
+    background-color: var(--main-color-dark);
+    color: var(--text-color);
+  }
+  
+  .tabela-pagamentos tbody tr:last-child {
+    font-weight: bold;
+    background-color: var(--cinza-light);
+  }
+  
+ 
+  .grafico {
+    background-color: var(--cinza-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .grafico img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+  .copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--cinza-escuro);
+  }
+  
+  .copyright span {
+    color: var(--main-color);
+    font-weight: 500;
+  }
+  

@@ -4,14 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/relatorios.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/relatorios.css">
 </head>
 <body>
-    <h1>Relatórios</h1>
+    <main>
+        <header>
+            <h1>Relatórios</h1>
+            <div class="periodo-vendas">
+                <span>Período de vendas...</span>
+                <span class="data-selecionada">12/05 a 19/05</span>
+            </div>
+        </header>
 
-    <p class="copyright">
-        &copy; 2024 - <span>Peça Aí!</span> Todos os direitos reservados. 
-    </p>
+        <section class="resumo-vendas">
+            <div class="vendas-totais">
+                <span>VENDAS TOTAIS:</span>
+                <h2>R$ 33.990</h2>
+            </div>
+            <table class="tabela-pagamentos">
+                <thead>
+                    <tr>
+                        <th>FORMA DE PAGAMENTO</th>
+                        <th>VALOR DE VENDAS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PIX</td>
+                        <td>R$13.432</td>
+                    </tr>
+                    <tr>
+                        <td>DINHEIRO</td>
+                        <td>R$6.980</td>
+                    </tr>
+                    <tr>
+                        <td>CRÉDITO</td>
+                        <td>R$10.020</td>
+                    </tr>
+                    <tr>
+                        <td>DÉBITO</td>
+                        <td>R$3.558</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>R$33.990</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="grafico">
+            <img src="./assets/img/grafico.jpeg" alt="Gráfico de vendas">
+        </section>
+
+        <p class="copyright">
+            &copy; 2024 - <span>Peça Aí!</span> Todos os direitos reservados.
+        </p>
+    </main>
 </body>
 </html>
