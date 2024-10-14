@@ -1,7 +1,8 @@
 function carregarProdutos() {
-    fetch('./assets/js/produtos/produtos.json')
-        .then(resposta => resposta.json())
-        .then(json => carregaProdutosNaPagina(json));
+    fetch('/cardapio/')  
+        .then(resposta => resposta.json())  
+        .then(json => carregaProdutosNaPagina(json))
+        .catch(erro => console.error('Erro ao carregar produtos:', erro));  
 }
 
 function carregaProdutosNaPagina(json) {
