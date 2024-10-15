@@ -1,9 +1,12 @@
 const express = require('express');
 const cardapioController = require('../controllers/cardapio.controller');
+const multer = require('multer');
 
 const router = express.Router();
 
-router.post("/cadastrarProduto", cardapioController.addItem);
+const upload = multer({ dest: 'public/assets/img/uploads' });
+
+router.post("/cadastrarProduto", upload.single('foto'), cardapioController.addItem);
 router.get("/", cardapioController.itens); //"/cardapio/"
 router.get("/:id", cardapioController.item);
 router.patch("/editarProduto/:id", cardapioController.editItem);

@@ -24,34 +24,31 @@
             <div class="forms-add">
                 <h1>Adicionar produtos</h1>
                     
-                    <form action="/cardapio/cadastrarProduto" method="post" id="form-add" >
-                        <label for="produtoNome">Nome do Produto*</label>
-                        <input type="text" id="produtoNome" required placeholder="Nome do produto" name="nome">
-                                
-                        <label for="produtoPreco">Preço*</label>
-                        <input type="number" step="0.01" id="produtoPreco" required placeholder="00.00" name="preco">
-                                
-                        <label for="produtoCategoria">Categoria*</label>
-                        <select id="produtoCategoria" required name="categoria">
-                            <option value="entrada">Entrada</option>
-                            <option value="principal">Prato Principal</option>
-                            <option value="sobremesa">Sobremesa</option>
-                            <option value="bebida">Bebida</option>
-                        </select>
-            
-                        <label for="produtoDescricao">Descrição*</label>
-                        <textarea id="produtoDescricao" type ="text" required placeholder="Descrição do produto" name="descricao"></textarea>
-            
-                        <label for="produtoFoto" id="btn-file">Foto do Prato*</label>
-                        <input type="file" id="produtoFoto" accept="image/*" required name="foto">
-            
-                        <div class="btn-salvar-add">                            
-                            <button type="submit" id="btn-salvar-add">Salvar</button>
-                        </div>
-                    </form>
-                        
+                <form action="/cardapio/cadastrarProduto" method="post" id="form-add" enctype="multipart/form-data">
+                    <label for="produtoNome">Nome do Produto*</label>
+                    <input type="text" id="produtoNome" required placeholder="Nome do produto" name="nome">
+                    
+                    <label for="produtoPreco">Preço*</label>
+                    <input type="number" step="0.01" id="produtoPreco" required placeholder="00.00" name="preco">
+                    
+                    <label for="produtoCategoria">Categoria*</label>
+                    <select id="produtoCategoria" required name="categoria">
+                        <option value="0">Entrada</option>
+                        <option value="1">Prato Principal</option>
+                        <option value="2">Sobremesa</option>
+                        <option value="3">Bebida</option>
+                    </select>
+                
+                    <label for="produtoDescricao">Descrição*</label>
+                    <textarea id="produtoDescricao" type="text" required placeholder="Descrição do produto" name="descricao"></textarea>
+                
+                    <label for="produtoFoto" id="btn-file">Foto do Prato*</label>
+                    <input type="file" id="produtoFoto" accept="image/*" required name="foto">
+                
+                    <div class="btn-salvar-add">                            
+                        <button type="submit" id="btn-salvar-add">Salvar</button>
                     </div>
-                </section>
+                </form>                 
             </div>
         </div>
     </div>
@@ -72,7 +69,7 @@
                     <input type="number" step="0.01" id="edit-produto-preco" name="preco">
                 
                     <label for="edit-produto-foto" id="btn-file">Foto do Prato:</label>
-                    <input type="file" id="edit-produto-foto" accept="image/*" required name="foto">
+                    <input type="file" id="edit-produto-foto" accept="image/*"  name="foto">
 
                     <div class="btn-salvar-edit">                            
                         <button type="submit" id="btn-salvar-edit">Salvar</button>

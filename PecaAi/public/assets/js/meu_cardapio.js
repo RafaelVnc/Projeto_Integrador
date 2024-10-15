@@ -15,7 +15,7 @@ function carregaProdutosNaPagina(json) {
 
         itemDiv.innerHTML = `
         <h2 id="produto-nome">${produto.nome}</h2>
-        <img src="${produto.foto}" alt="${produto.nome}" id="produto-img">
+        <img src="${produto.fotoUrl}" alt="${produto.nome}" id="produto-img">
         <div class="checkbox-wrapper-8">
             <input class="tgl tgl-skewed" id="${produto.nome}" type="checkbox" ${produto.ativo ? 'checked' : ''}/>
             <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="${produto.nome}"></label>
@@ -46,6 +46,7 @@ function abrirModalEdicao(produto) {
     document.getElementById('edit-produto-nome').value = produto.nome;
     document.getElementById('edit-produto-preco').value = produto.preco;
     document.getElementById('edit-produto-desc').value = produto.descricao;
+    document.getElementById('edit-produto-foto').value = produto.fotoUrl;
 }
 
 function modalAddInteractions() {

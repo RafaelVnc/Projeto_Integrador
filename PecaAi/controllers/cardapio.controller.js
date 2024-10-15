@@ -6,7 +6,7 @@ function addItem(req, res){
         nome:req.body.nome,
         descricao:req.body.descricao,
         preco:req.body.preco,
-        fotoUrl:req.body.foto,
+        fotoUrl: req.file ? `/assets/img/uploads/${req.file.filename}` : null,
         ativo:true,
         categoryId:req.body.categoria
     }
@@ -38,13 +38,22 @@ function item(req, res){
 }
 
 //Get de todos os itens do cardápio
-function itens(req, res){
+function itens(req, res) {
     models.itemCardapio.findAll().then(result => {
-        res.status(200).json(result);
+        const produtos = result.map(produto => ({
+            id: produto.id,
+            nome: produto.nome,
+            descricao: produto.descricao,
+            preco: produto.preco,
+            fotoUrl: produto.fotoUrl, 
+            ativo: produto.ativo
+        }));
+
+        res.status(200).json(produtos);
     }).catch(error => {
         res.status(500).json({
             message: "Algo deu errado!"
-        })
+        });
     });
 }
 
