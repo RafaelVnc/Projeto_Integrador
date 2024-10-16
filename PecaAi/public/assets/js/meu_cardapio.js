@@ -5,6 +5,18 @@ function carregarProdutos() {
         .catch(erro => console.error('Erro ao carregar produtos:', erro));  
 }
 
+function deletarProduto(id){
+    fetch(`/cardapio/deletarProduto/${id}`, {
+        method: 'DELETE'
+    })
+        .then(res =>{
+            if (res.ok){
+                window.location.href = '/';
+            }
+        })
+        .catch(erro => console.error('Erro ao deletar produto:', erro));  
+}
+
 function carregaProdutosNaPagina(json) {
     const grid = document.getElementById('grid');
     grid.innerHTML = ''; 
@@ -22,14 +34,19 @@ function carregaProdutosNaPagina(json) {
         </div>
         <p id="desc-breve">${produto.descricao}</p>
         <h3 id="produto-preco">R$ ${produto.preco.toFixed(2)}</h3>
-        <button id="editar-${produto.id}" class="btn-editar"><i class='bx bxs-edit'></i>Editar</button>
+        <button id="${produto.id}" class="btn-editar"><i class='bx bxs-edit'></i>Editar</button>
         `;
 
         grid.appendChild(itemDiv);
 
-        const btn_editar = document.getElementById(`editar-${produto.id}`);
+        const btn_editar = document.getElementById(`${produto.id}`);
         btn_editar.onclick = function () {
             abrirModalEdicao(produto); 
+        };
+
+        const btn_open_excluir = document.getElementById("btn-open-excluir");
+        btn_open_excluir.onclick = function () {
+            modalConfirmDelete(produto); 
         };
     }
 }
@@ -46,7 +63,7 @@ function abrirModalEdicao(produto) {
     document.getElementById('edit-produto-nome').value = produto.nome;
     document.getElementById('edit-produto-preco').value = produto.preco;
     document.getElementById('edit-produto-desc').value = produto.descricao;
-    document.getElementById('edit-produto-foto').value = produto.fotoUrl;
+    document.getElementById('edit-produto-foto-preview').src = produto.fotoUrl;
 }
 
 function modalAddInteractions() {
@@ -64,49 +81,34 @@ function modalAddInteractions() {
     };
 }
 
-function modalConfirmDelete() {
-    const btn_open_excluir = document.getElementById("btn-open-excluir");
+function modalConfirmDelete(produto) {
     const modal_excluir = document.getElementById("modal-confirm-excluir");
+    modal_excluir.style.display = "block";
+    
     const btn_close_excluir = document.getElementById("btn-close-excluir");
-    const btn_cancelar = document.getElementById("btn-cancelar");
-
-    btn_open_excluir.onclick = function () {
-        modal_excluir.style.display = "block";
-    };
-
     btn_close_excluir.onclick = function () {
         modal_excluir.style.display = "none";
     };
-
+    
+    const btn_cancelar = document.getElementById("btn-cancelar");
     btn_cancelar.onclick = function () {
         modal_excluir.style.display = "none";
     };
+
+    const btn_excluir = document.getElementById("btn-excluir");
+    
+    btn_excluir.addEventListener('click', () =>{
+
+        const id = produto.id;
+
+        deletarProduto(id);
+    });
+
 }
 
 function inicializarPaginaMeuCardapio() {
     carregarProdutos();
     modalAddInteractions();
-    modalConfirmDelete();
 }
 
 inicializarPaginaMeuCardapio();
-
-/*
-const btn_excluir = document.getElementById("btn-excluir");
-
-btn_excluir.addEventListener('click', () =>{
-    fetch(`/cardapio/${id_item}`, {
-        
-        method: 'DELETE'
-    
-    }).then(response => {
-        if (response.ok){
-            console.log("Item deletado com sucesso!");
-        } else {
-            console.log("Erro ao deletar!");
-        }
-    }).catch(error => {
-        console.log('Erro:', error);
-    });
-});
-*/

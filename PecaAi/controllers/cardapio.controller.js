@@ -85,9 +85,11 @@ function deleteItem(req, res){
     const id = req.params.id;
 
     models.itemCardapio.destroy({where:{id:id}}).then(result => {
-        res.status(200).json({
-            message: "Item deletado!"
-        });
+        if(result) {
+            res.status(200).json({
+                message: "Item deletado com sucesso!"
+            });
+        }
     }).catch(error => {
         res.status(500).json({
             message: "Algo deu errado!",

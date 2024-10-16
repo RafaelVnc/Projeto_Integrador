@@ -68,6 +68,10 @@
     text-decoration: underline var(--main-color);
   }
 
+  #edit-produto-foto-preview{
+    max-height: 15rem;
+  }
+
 /*Botão disponivel*/
 
   .checkbox-wrapper-8{

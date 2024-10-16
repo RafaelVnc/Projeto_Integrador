@@ -10,6 +10,6 @@ router.post("/cadastrarProduto", upload.single('foto'), cardapioController.addIt
 router.get("/", cardapioController.itens); //"/cardapio/"
 router.get("/:id", cardapioController.item);
 router.patch("/editarProduto/:id", cardapioController.editItem);
-router.delete("/:id", cardapioController.deleteItem);
+router.delete("/deletarProduto/:id", cardapioController.deleteItem);
 
 module.exports = router;
