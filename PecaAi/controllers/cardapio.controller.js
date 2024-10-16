@@ -12,10 +12,10 @@ function addItem(req, res){
     }
 
     models.itemCardapio.create(item).then(result => {
-        res.status(201).json({
-            mensagem: "Item criado com sucesso.",
-            item: result
-        });
+        res.status(201);
+        if (res.statusCode === 201) {
+            res.redirect('/');
+        }
     }).catch(error => {
         res.status(500).json({
             mensagem: "Algo deu errado!",
