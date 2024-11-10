@@ -9,7 +9,7 @@ const upload = multer({ dest: 'public/assets/img/uploads' });
 router.post("/cadastrarProduto", upload.single('foto'), cardapioController.addItem);
 router.get("/", cardapioController.itens); //"/cardapio/"
 router.get("/:id", cardapioController.item);
-router.patch("/editarProduto/:id", cardapioController.editItem);
+router.patch("/editarProduto/:id", upload.single('foto'), cardapioController.editItem);
 router.delete("/deletarProduto/:id", cardapioController.deleteItem);
 
 module.exports = router;

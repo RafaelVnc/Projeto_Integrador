@@ -1,4 +1,5 @@
 const models = require('../models');
+const multer = require('multer');
 
 //Post novo item do cardápio
 function addItem(req, res){
@@ -58,26 +59,29 @@ function itens(req, res) {
 }
 
 //Update de um item do cardápio
-function editItem(req, res){
+function editItem(req, res) {
     const id = req.params.id;
-    const updatedItem = {
-        nome:req.body.nome,
-        descricao:req.body.descricao,
-        preco:req.body.preco,
-        fotoUrl:req.body.foto
-    }
 
-    models.itemCardapio.update(updatedItem, {where: {id:id}}).then(result =>{
-        res.status(200).json({
-            message: "Item atualizado!",
-            item: updatedItem
+    const updatedItem = {
+        nome: req.body.nome,
+        descricao: req.body.descricao,
+        preco: req.body.preco,
+        fotoUrl: req.file ? `/assets/img/uploads/${req.file.filename}` : req.body.fotoUrl
+    };
+
+    models.itemCardapio.update(updatedItem, { where: { id: id } })
+        .then(() => {
+            res.status(200).json({
+                message: "Item atualizado!",
+                item: updatedItem
+            });
+        })
+        .catch(error => {
+            res.status(500).json({
+                message: "Algo deu errado!",
+                error: error
+            });
         });
-    }).catch(error => {
-        res.status(500).json({
-            message: "Algo deu errado!",
-            error: error
-        });
-    });
 }
 
 //Delete de um item do cardápio

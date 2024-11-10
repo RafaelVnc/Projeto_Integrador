@@ -64,6 +64,11 @@ function abrirModalEdicao(produto) {
     document.getElementById('edit-produto-preco').value = produto.preco;
     document.getElementById('edit-produto-desc').value = produto.descricao;
     document.getElementById('edit-produto-foto-preview').src = produto.fotoUrl;
+
+    const btnSalvarEdit = document.getElementById('btn-salvar-edit');
+    btnSalvarEdit.onclick = function(){
+        atualizarProduto(produto.id);
+    }
 }
 
 function modalAddInteractions() {
@@ -104,6 +109,22 @@ function modalConfirmDelete(produto) {
         deletarProduto(id);
     });
 
+}
+
+function atualizarProduto(id) {
+    const formData = new FormData(document.getElementById('form-edit'));
+    
+    fetch(`/cardapio/editarProduto/${id}`, {
+        method: 'PATCH',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === "Item atualizado!") {
+            location.reload();
+        }
+    })
+    .catch(error => console.error('Erro ao atualizar produto:', error));
 }
 
 function inicializarPaginaMeuCardapio() {

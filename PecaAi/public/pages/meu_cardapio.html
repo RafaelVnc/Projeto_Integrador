@@ -58,7 +58,7 @@
             <span class="close" id="btn-close-edit">&times;</span>
             <div class="forms-edit">
                 <h1>Editar produto</h1>
-                <form action="/cardapio/editarProduto">
+                <form id="form-edit" method="post" enctype="multipart/form-data">
                     <label for="edit-produto-nome">Nome:</label>
                     <input type="text" id="edit-produto-nome" name="nome">
 
@@ -73,7 +73,7 @@
                     <input type="file" id="edit-produto-foto" accept="image/*"  name="foto">
 
                     <div class="btn-salvar-edit">                            
-                        <button type="submit" id="btn-salvar-edit">Salvar</button>
+                        <button type="button" id="btn-salvar-edit">Salvar</button>
                     </div>
                 </form>
 
