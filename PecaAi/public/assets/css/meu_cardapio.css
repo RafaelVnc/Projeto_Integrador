@@ -17,6 +17,21 @@
   
   .row{
     text-align: center;
+    min-width: 15rem;
+    max-width: 15rem;
+    margin-left: 1.2rem;
+  }
+
+  .row h2, h3{
+    margin-left: 2rem;
+  }
+
+  .row p{
+    margin-left: 2rem;
+  }
+
+  .row button{
+    margin-left: 2rem;
   }
 
   .btn-add{
@@ -76,7 +91,7 @@
   /*Botão disponivel*/
 
   .checkbox-wrapper-8{
-    margin-left: 8rem;
+    margin-left: 6.5rem;
     margin-top: 5px;
   }
 
