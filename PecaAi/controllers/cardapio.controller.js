@@ -84,6 +84,25 @@ function editItem(req, res) {
         });
 }
 
+function editDisponibilidade(req, res) {
+    const id = req.params.id;
+    const { ativo } = req.body;
+
+    models.itemCardapio.update({ ativo }, { where: { id: id } })
+        .then(() => {
+            res.status(200).json({
+                message: "Disponibilidade atualizada!",
+                item: { id, ativo }
+            });
+        })
+        .catch(error => {
+            res.status(500).json({
+                message: "Algo deu errado!",
+                error: error
+            });
+        });
+}
+
 //Delete de um item do cardápio
 function deleteItem(req, res){
     const id = req.params.id;
@@ -107,5 +126,6 @@ module.exports= {
     item: item,
     itens: itens, 
     editItem: editItem,
+    editDisponibilidade: editDisponibilidade,
     deleteItem: deleteItem
 }

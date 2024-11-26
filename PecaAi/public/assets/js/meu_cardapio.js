@@ -29,8 +29,8 @@ function carregaProdutosNaPagina(json) {
         <h2 id="produto-nome">${produto.nome}</h2>
         <img src="${produto.fotoUrl}" alt="${produto.nome}" id="produto-img">
         <div class="checkbox-wrapper-8">
-            <input class="tgl tgl-skewed" id="${produto.nome}" type="checkbox" ${produto.ativo ? 'checked' : ''}/>
-            <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="${produto.nome}"></label>
+            <input class="tgl tgl-skewed" id="checkbox-${produto.id}" type="checkbox" ${produto.ativo ? 'checked' : ''}/>
+            <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="checkbox-${produto.id}"></label>
         </div>
         <p id="desc-breve">${produto.descricao}</p>
         <h3 id="produto-preco">R$ ${produto.preco.toFixed(2)}</h3>
@@ -48,6 +48,11 @@ function carregaProdutosNaPagina(json) {
         btn_open_excluir.onclick = function () {
             modalConfirmDelete(produto); 
         };
+
+        const checkbox = document.getElementById(`checkbox-${produto.id}`);
+        checkbox.addEventListener('change', () => {
+            atualizarDisponibilidade(produto.id, checkbox.checked, produto.nome);
+        });
     }
 }
 
@@ -125,6 +130,23 @@ function atualizarProduto(id) {
         }
     })
     .catch(error => console.error('Erro ao atualizar produto:', error));
+}
+
+function atualizarDisponibilidade(id, ativo, nome) {
+    fetch(`/cardapio/editDisponibilidade/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ativo })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === "Disponibilidade atualizada!") {
+            alert(`Produto ${nome} atualizado para: ${ativo ? 'Ativo' : 'Inativo'}`);
+        }
+    })
+    .catch(error => console.error('Erro ao atualizar disponibilidade:', error));
 }
 
 function inicializarPaginaMeuCardapio() {
