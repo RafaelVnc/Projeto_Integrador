@@ -5,17 +5,6 @@ function carregarProdutos() {
         .catch(erro => console.error('Erro ao carregar produtos:', erro));  
 }
 
-function deletarProduto(id){
-    fetch(`/cardapio/deletarProduto/${id}`, {
-        method: 'DELETE'
-    })
-        .then(res =>{
-            if (res.ok){
-                window.location.href = '/';
-            }
-        })
-        .catch(erro => console.error('Erro ao deletar produto:', erro));  
-}
 
 function carregaProdutosNaPagina(json) {
     const grid = document.getElementById('grid');
@@ -34,19 +23,22 @@ function carregaProdutosNaPagina(json) {
         </div>
         <p id="desc-breve">${produto.descricao}</p>
         <h3 id="produto-preco">R$ ${produto.preco.toFixed(2)}</h3>
-        <button id="${produto.id}" class="btn-editar"><i class='bx bxs-edit'></i>Editar</button>
+        <button id="btn-editar-${produto.id}" class="btn-editar"><i class='bx bxs-edit'></i>Editar</button>
+        <div class="btn-excluir">                       
+            <button class="btn-open-excluir" id="btn-open-excluir-${produto.id}">Excluir produto</button>
+        </div>
         `;
 
         grid.appendChild(itemDiv);
 
-        const btn_editar = document.getElementById(`${produto.id}`);
+        const btn_editar = document.getElementById(`btn-editar-${produto.id}`);
         btn_editar.onclick = function () {
             abrirModalEdicao(produto); 
         };
 
-        const btn_open_excluir = document.getElementById("btn-open-excluir");
+        const btn_open_excluir = document.getElementById(`btn-open-excluir-${produto.id}`);
         btn_open_excluir.onclick = function () {
-            modalConfirmDelete(produto); 
+            modalConfirmDelete(produto.id); 
         };
 
         const checkbox = document.getElementById(`checkbox-${produto.id}`);
@@ -91,7 +83,7 @@ function modalAddInteractions() {
     };
 }
 
-function modalConfirmDelete(produto) {
+function modalConfirmDelete(id) {
     const modal_excluir = document.getElementById("modal-confirm-excluir");
     modal_excluir.style.display = "block";
     
@@ -107,13 +99,23 @@ function modalConfirmDelete(produto) {
 
     const btn_excluir = document.getElementById("btn-excluir");
     
-    btn_excluir.addEventListener('click', () =>{
-
-        const id = produto.id;
-
+    // Remova qualquer ouvinte anterior e defina um novo
+    btn_excluir.onclick = null; // Remove qualquer manipulador anterior
+    btn_excluir.onclick = function () {
         deletarProduto(id);
-    });
+    };
+}
 
+function deletarProduto(id){
+    fetch(`/cardapio/deletarProduto/${id}`, {
+        method: 'DELETE'
+    })
+        .then(res =>{
+            if (res.ok){
+                window.location.href = '/';
+            }
+        })
+        .catch(erro => console.error('Erro ao deletar produto:', erro));  
 }
 
 function atualizarProduto(id) {
