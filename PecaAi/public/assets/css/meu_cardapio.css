@@ -362,6 +362,7 @@
     background-color: rgb(204, 0, 0);
     border-radius: 1rem;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
   }
 
   #btn-excluir:hover, #btn-open-excluir:hover{

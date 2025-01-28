@@ -1,1 +1,3 @@
 node_modules
+PecaAi/public/assets/img/uploads/*
+!.gitkeep
